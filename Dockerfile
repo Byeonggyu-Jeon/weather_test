@@ -1,14 +1,14 @@
-FROM python:3.7
+FROM python:3.9
 
-WORKDIR /weather
+WORKDIR /weather_test
 
-COPY ./requirements.txt /weather/requirements.txt
+COPY ./requirements.txt /weather_test/requirements.txt
 
-RUN pip install --no-cache-dir --upgrade -r /weather/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /weather_test/requirements.txt
 
-COPY ./app /weather/app
+COPY ./app /weather_test/app
 
-WORKDIR /weather/app
+WORKDIR /weather_test/app
 
 EXPOSE 7070
 
