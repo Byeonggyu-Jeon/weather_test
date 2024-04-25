@@ -19,7 +19,8 @@ async def weather(location: str):
     soup = BeautifulSoup(html.text, 'html.parser')
 
     # 온도 추출
+    data_0 = soup.find('div',{'class':'title_area _area_panel'}).text.strip()
     data_1 = soup.find('div',{'class':'temperature_text'}).text.strip()
     data_2 = soup.find('div',{'class':'temperature_info'}).text.strip()
     data_3 = soup.find('ul',{'class':'today_chart_list'}).text.strip()
-    return location + ' ' + data_1, data_2, data_3
+    return location + ' ' + data_0, data_1, data_2, data_3
